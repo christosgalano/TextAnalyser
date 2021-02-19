@@ -30,7 +30,8 @@ public:
 
     size_t get_no_occurrences(const std::string& word);
 
-    std::vector<std::string> get_most_used_words(size_t limit);
+    // At most we return all the different words - inserted in the vector in decreasing order based on no_occurrences
+    std::vector<std::string> get_most_used_words(size_t limit); 
     
     void print_histogram() const;
 };
