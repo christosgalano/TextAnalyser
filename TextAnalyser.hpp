@@ -1,4 +1,3 @@
-#pragma once
 #include <string>
 #include <vector>
 #include <unordered_map>
@@ -19,6 +18,8 @@ private:
     
     std::vector<entry> entries; // Stores the pairs of occurences, because we want to sort them in decreasing order based on value
 
+    std::unordered_map<std::string, std::string> contractions;
+
 public:
     explicit TextAnalyser(const std::string& in_path);
 
@@ -35,6 +36,3 @@ public:
     
     void print_histogram() const;
 };
-
-// TODO: take into account cases like we've,that's etc.
-// Currently in those cases after the removal of punctuation the remaining word will be weve, thats etc.
