@@ -11,13 +11,14 @@
 // NOTE on contractions : we consider all 'd to be had - there cases where they might be should or would,
 // we also consider all 's to be is - there cases where they might be us for example let's.
 
+std::unordered_map<std::string, std::string> TextAnalyser::contractions = {
+    {"'m", "am"}, {"'s", "is"}, {"'re", "are"},         
+    {"'d", "had"}, {"'ve", "have"}, {"'ll", "will"},
+    {"'t", "not"}
+};
+
 TextAnalyser::TextAnalyser(const std::string& in_path)
-    : path{in_path},
-      contractions {
-        {"'m", "am"}, {"'s", "is"}, {"'re", "are"},         
-        {"'d", "had"}, {"'ve", "have"}, {"'ll", "will"},
-        {"'t", "not"}
-      }
+    : path{in_path}
 {
     std::ifstream text{path};
     if (!text)
