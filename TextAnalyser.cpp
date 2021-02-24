@@ -27,10 +27,9 @@ TextAnalyser::TextAnalyser(const std::string& in_path)
     // Read the text - istream_iterator ignores white space
     words = std::vector<std::string> { std::istream_iterator<std::string>{text}, std::istream_iterator<std::string>{} };
 
-    // Everything that contains letters or '
-    std::regex exp {"[^a-zA-Z\'$]"};
+    std::regex exp {"[^a-zA-Z\']"};
 
-    // Make all words lower_case and replace anything that is not a letter or a space with ""
+    // Make all words lower_case and replace anything that is not a letter or a ' with ""
     for (auto& s : words) {
         for_each(s.begin(), s.end(), [] (char& c) { c = ::tolower(c); } );
         s = std::regex_replace(s, exp, "");  
