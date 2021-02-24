@@ -1,6 +1,6 @@
-### Documentation ###
+# Documentation #
 
-__This project aims to simulate a role playing game__
+***This project aims to simulate a role playing game***
 
 ## COMPILATION ##
 
